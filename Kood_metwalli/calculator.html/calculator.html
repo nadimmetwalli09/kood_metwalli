@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kalkulaator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<script>
+        function liitmine(a,b) {
+
+
+        return a+b;
+    }
+    function lahutamine(a,b) {
+
+
+       return a+b;
+    }
+    function korrutamine(a,b) {
+
+
+    return a+b;
+    }
+
+    function jagamine(a,b) {
+if (b===0) {
+return "Nulliga ei saa jagada"
+
+}
+return a/b;
+
+
+}
+
+let num1  = parseFloat(prompt ("siseta esimene arv"));
+let num2  = parseFloat(prompt ("siseta teine arv"));
+
+let tehe = prompt(Vali tehe +, -, *, / );
+
+let tulemus;
+
+switch (tehe) {
+case "+"
+tulemus = liitmine (num1, num2)
+
+case "-"
+tulemus = lahutamine (num1, num2)
+
+case "*"
+tulemus = korrutamine (num1, num2)
+
+case "/"
+tulemus = jagamine (num1, num2)
+
+    </script>
+  </body>
+</html>
