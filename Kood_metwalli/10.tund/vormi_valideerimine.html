@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreerimisvormi valideerimine</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Registreerimisvorm</h2>
+<form id="registreerimisVorm" onsubmit="return valideeriVorm()">
+    <label for="kasutajanimi">Kasutajanimi:</label>
+    <input type="text" id="kasutajanimi" name="kasutajanimi">
+    <span id="kasutajanimiError" class="error"></span><br>
+
+    <label for="email">E-post:</label>
+    <input type="email" id="email" name="email">
+    <span id="emailError" class="error"></span><br>
+
+    <label for="parool">Parool:</label>
+    <input type="password" id="parool" name="parool">
+    <span id="paroolError" class="error"></span><br>
+
+    <label for="paroolKinnitus">Parooli kinnitamine:</label>
+    <input type="password" id="paroolKinnitus" name="paroolKinnitus">
+    <span id="paroolKinnitusError" class="error"></span><br>
+
+    <input type="submit" value="Registreeri">
+</form>
+
+<script>
+    function valideeriVorm() {
+        // Kasutajanimi
+        var kasutajanimi = document.getElementById("kasutajanimi").value;
+        var kasutajanimiError = document.getElementById("kasutajanimiError");
+        if (kasutajanimi.length < 5) {
+            kasutajanimiError.textContent = "Kasutajanimi peab olema vähemalt 5 tähemärki pikk.";
+            return false;
+        } else {
+            kasutajanimiError.textContent = "";
+        }
+
+        // E-post
+        var email = document.getElementById("email").value;
+        var emailError = document.getElementById("emailError");
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            emailError.textContent = "Sisestage kehtiv e-posti aadress.";
+            return false;
+        } else {
+            emailError.textContent = "";
+        }
+
+        // Parool
+        var parool = document.getElementById("parool").value;
+        var paroolError = document.getElementById("paroolError");
+        if (parool.length < 8) {
+            paroolError.textContent = "Parool peab olema vähemalt 8 tähemärki pikk.";
+            return false;
+        } else {
+            paroolError.textContent = "";
+        }
+
+        // Parooli kinnitamine
+        var paroolKinnitus = document.getElementById("paroolKinnitus").value;
+        var paroolKinnitusError = document.getElementById("paroolKinnitusError");
+        if (paroolKinnitus !== parool) {
+            paroolKinnitusError.textContent = "Paroolid ei kattu.";
+            return false;
+        } else {
+            paroolKinnitusError.textContent = "";
+        }
+
+        // Kui kõik on korras, saab vormi esitada
+        return true;
+    }
+</script>
+
+</body>
+</html>
