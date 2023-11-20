@@ -44,25 +44,24 @@
         "https://placebeard.it/700/500",
     ];
 
-    let index = 0
-    const galleryImg = document.getElementById('gallery-img');
-
-    function showImage (index) {
-        galleryImg.src = imageUrls(index)
-    }
-    function nextImage() {
-        index = (index + 1) imageUrls.length;
-        showImage(index)
-    }
-
-    function prevImage() {
-        index = (index = - 1 + imageurls.length) imageUrls.length;
-        showImage (index);
-    }
-
-showImage(index)
-
 </script>
+let currentIndex = 0;
 
+function updateImage() {
+    document.getElementById("gallery-img").src = imageUrls[currentIndex];
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+    updateImage();
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % imageUrls.length;
+    updateImage();
+}
+
+// Esialgse pildi kuvamine
+updateImage();
 </body>
 </html>
