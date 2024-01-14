@@ -1,0 +1,75 @@
+<!-- public/contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/styles/main.css">
+    <title>Contact Diego Maradona</title>
+</head>
+<body>
+    <header>
+        <h1>Contact Nadim Metwalli</h1>
+        <div id="user-header"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main id="contact">
+        <h2>Get in Touch</h2>
+        <p>For inquiries and collaborations, feel free to contact
+
+            <!-- Registration Form -->
+        <div class="form-container" id="registration-form">
+            <h3>Register</h3>
+            <form id="register-form">
+                <label for="reg-username">Username:</label>
+                <input type="text" id="reg-username" name="reg-username" required>
+
+                <label for="reg-password">Password:</label>
+                <input type="password" id="reg-password" name="reg-password" required>
+
+                <label for="reg-firstname">First Name:</label>
+                <input type="text" id="reg-firstname" name="reg-firstname" required>
+
+                <label for="reg-lastname">Last Name:</label>
+                <input type="text" id="reg-lastname" name="reg-lastname" required>
+
+                <label for="reg-age">Age:</label>
+                <input type="number" id="reg-age" name="reg-age" required>
+
+                <label for="reg-gender">Gender:</label>
+                <select id="reg-gender" name="reg-gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <button type="button" onclick="registerUser()">Register</button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-container" id="login-form">
+            <h3>Login</h3>
+            <form id="login-form">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="login-username" required>
+
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <button type="button" onclick="loginUser()">Login</button>
+            </form>
+        </div>
+
+        <!-- Add more content for the contact page as needed -->
+    </main>
+
+    <script src="/scripts/app.js"></script>
+</body>
+</html>
