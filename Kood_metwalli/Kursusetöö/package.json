@@ -1,0 +1,19 @@
+{
+    "name": "nadim metwalli website",
+    "version": "1.0.0",
+    "description": "A website dedicated to Diego Maradona",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "keywords": ["Nadim", "Metwalli", "student"],
+    "author": "Nadim Metwalli",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.17.1",
+      "express-session": "^1.17.2",
+      "body-parser": "^1.19.0",
+      "bcrypt": "^5.0.1"
+    }
+  }
+  
