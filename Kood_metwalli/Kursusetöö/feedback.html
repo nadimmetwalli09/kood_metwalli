@@ -1,0 +1,42 @@
+<!-- public/feedback.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/styles/main.css">
+    <title>Diego Maradona - Feedback</title>
+</head>
+<body>
+    <header>
+        <h1>Feedback for Nadim Metwalli</h1>
+        <div id="user-header"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main id="feedback">
+        <h2>Leave your Feedback</h2>
+        <p>We appreciate your thoughts and feedback. Feel free to share your comments with us!</p>
+
+        <!-- Feedback Form -->
+        <div class="form-container" id="feedback-form">
+            <form id="submit-feedback-form">
+                <label for="feedback-message">Your Feedback:</label>
+                <textarea id="feedback-message" name="feedback-message" rows="4" required></textarea>
+
+                <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+            </form>
+        </div>
+
+        <!-- Display Area for Feedback -->
+        <div id="feedback-display"></div>
+    </main>
+
+    <script src="/scripts/app.js"></script>
+</body>
+</html>
