@@ -1,4 +1,38 @@
-// public/scripts/app.js
+const express = require('express');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(session({
+    secret: 'your-secret-key',
+    resave: true,
+    saveUninitialized: true
+}));
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/about', requireAuth, (req, res) => {
+    res.sendFile(__dirname + '/about.html');
+});
+
+app.get('/contact', requireAuth, (req, res) => {
+    res.sendFile(__dirname + '/contact.html');
+});
+
+app.get('/feedback', requireAuth, (req, res) => {
+    res.sendFile(__dirname + '/feedback.html');
+});
+
+app.get('/profile', requireAuth, (req, res) => {
+    res.sendFile(__dirname + '/profile.html');
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     checkAuthStatus();
 });
