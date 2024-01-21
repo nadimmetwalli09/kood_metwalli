@@ -40,3 +40,24 @@ function loginUser() {
     // Example: Log the login details to the console
     console.log("Login Details:", { username, password });
 }
+
+function submitFeedback() {
+    const feedbackMessage = document.getElementById("feedback-message").value;
+
+    // Display the feedback
+    displayFeedback(feedbackMessage);
+
+    // Clear the input field
+    document.getElementById("submit-feedback-form").reset();
+}
+
+function displayFeedback(feedback) {
+    const feedbackDisplay = document.getElementById("feedback-display");
+    
+    // Create a new paragraph element for the feedback
+    const feedbackParagraph = document.createElement("p");
+    feedbackParagraph.textContent = feedback;
+
+    // Append the feedback to the display area
+    feedbackDisplay.appendChild(feedbackParagraph);
+}
